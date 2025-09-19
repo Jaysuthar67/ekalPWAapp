@@ -1,0 +1,183 @@
+{
+  "instruction_overview": {
+    "role": "You are implementing the PWA Survey Application based on the provided design specification",
+    "design_document": "pwa_survey_spec.json - MUST be used as the authoritative design reference",
+    "this_document_purpose": "Implementation guidance, development approach, and practical instructions",
+    "importent_note": "Versions are just suggestions not mendatory, You can use most stable and Compitable versions for everything and every dependency"
+  },
+
+  "design_reference_usage": {
+    "application_overview": "Refer to pwa_survey_spec.json → application_overview for project goals and requirements",
+    "technical_stack": "Refer to pwa_survey_spec.json → technical_stack for all technology decisions",
+    "ui_specifications": "Refer to pwa_survey_spec.json → ui_parts for complete component and layout specifications",
+    "business_logic": "Refer to pwa_survey_spec.json → business_logic for data models, authentication, and feature requirements",
+    "build_system": "Refer to pwa_survey_spec.json → build_system for Vite configuration and PWA setup"
+  },
+
+  "implementation_approach": {
+    "design_first": "Study pwa_survey_spec.json thoroughly before writing any code",
+    "component_mapping": "Map each UI component in the spec to actual Fluent UI components",
+    "data_flow": "Implement the exact data architecture specified in business_logic section",
+    "responsive_strategy": "Follow the responsive_design patterns defined in ui_parts section"
+  },
+
+  "development_workflow": {
+    "phase_implementation": {
+      "reference": "pwa_survey_spec.json → implementation_phases for exact task breakdown",
+      "approach": [
+        "Complete each phase fully before moving to next",
+        "Test responsive behavior at each phase",
+        "Validate IndexedDB operations work offline",
+        "Ensure Fluent UI components render correctly on all screen sizes"
+      ]
+    },
+    "code_organization": {
+      "structure_reference": "pwa_survey_spec.json → file_structure for exact folder organization",
+      "naming_conventions": "Use descriptive names that match the design spec component names",
+      "imports": "Import only the specific Fluent UI components mentioned in ui_parts section"
+    }
+  },
+
+  "implementation_specifics": {
+    "styling_implementation": {
+      "principle": "Minimal custom CSS as stated in pwa_survey_spec.json → technical_stack",
+      "allowed_custom_css": [
+        "CSS Grid/Flexbox for layout containers only",
+        "Responsive breakpoint media queries for component adaptation",
+        "Chart container dimensions for recharts integration",
+        "Minor spacing adjustments when Fluent UI tokens insufficient"
+      ],
+      "css_structure": "Use CSS Modules, keep files under 50 lines, comment all custom styles"
+    },
+
+    "indexeddb_service_implementation": {
+      "schema_reference": "Implement exact schema from pwa_survey_spec.json → business_logic → data_structure",
+      "required_methods": [
+        "Database initialization matching object stores in design spec",
+        "CRUD operations for each data model defined in business_logic",
+        "Query methods with indexing as specified",
+        "Export functions matching business_logic → data_export requirements"
+      ],
+      "error_handling": "Comprehensive try-catch blocks for all async IndexedDB operations"
+    },
+
+    "authentication_implementation": {
+      "credentials_reference": "Use exact demo_users from pwa_survey_spec.json → business_logic → authentication",
+      "session_approach": "Follow session_management spec exactly",
+      "context_structure": "AuthContext should provide login/logout/user state matching design spec"
+    }
+  },
+
+  "component_development_guide": {
+    "fluent_ui_mapping": {
+      "reference_source": "pwa_survey_spec.json → ui_parts → pages_and_components",
+      "development_pattern": [
+        "Find component specification in design doc",
+        "Import exact Fluent UI components listed",
+        "Implement responsive behavior as specified",
+        "Test on breakpoints defined in responsive_design section"
+      ]
+    },
+    "responsive_implementation": {
+      "breakpoints_reference": "Use exact breakpoints from pwa_survey_spec.json → ui_parts → responsive_design",
+      "component_adaptations": "Follow responsive_components patterns from design spec",
+      "testing_approach": "Test each component at all three breakpoint ranges"
+    }
+  },
+
+  "data_integration_patterns": {
+    "hook_development": [
+      "Create custom hooks matching the hooks listed in pwa_survey_spec.json → file_structure",
+      "Each hook should handle one data entity (surveys, responses, users)",
+      "Implement loading states, error states, and success states",
+      "Use React Query pattern for caching and sync"
+    ],
+    "context_usage": [
+      "Global state only for user authentication and theme",
+      "Component-level state for form inputs and UI interactions",
+      "IndexedDB queries should be abstracted through custom hooks"
+    ]
+  },
+
+  "testing_and_validation": {
+    "functionality_validation": {
+      "offline_testing": [
+        "Disconnect internet after initial load",
+        "Verify all CRUD operations work offline",
+        "Test data persistence across browser sessions",
+        "Validate PWA installation and offline usage"
+      ],
+      "responsive_validation": [
+        "Test on actual mobile devices, not just browser dev tools",
+        "Verify touch targets meet minimum 44px requirement",
+        "Validate navigation patterns work on each device type",
+        "Test form inputs and interactions on touch devices"
+      ]
+    },
+    "ui_validation": {
+      "fluent_ui_compliance": [
+        "Verify all components render with default Fluent UI styling",
+        "Test theme switching works correctly",
+        "Validate accessibility features work as expected",
+        "Check color contrast meets Fluent UI standards"
+      ]
+    }
+  },
+
+  "quality_gates": {
+    "code_review_checklist": [
+      "All components match specifications in pwa_survey_spec.json",
+      "IndexedDB schema implemented exactly as designed",
+      "Responsive behavior follows design spec patterns",
+      "Minimal custom CSS used only where necessary",
+      "Authentication follows hardcoded demo approach",
+      "All phases from implementation_phases are complete",
+      "PWA functionality works offline",
+      "Export functionality matches business_logic requirements"
+    ],
+    "performance_validation": [
+      "Initial load under 3 seconds",
+      "Smooth interactions at 60fps",
+      "IndexedDB queries optimized with proper indexing",
+      "Bundle size reasonable with code splitting"
+    ]
+  },
+
+  "troubleshooting_guide": {
+    "common_issues": [
+      {
+        "issue": "Fluent UI components not rendering correctly",
+        "solution": "Verify FluentProvider is wrapping app with correct theme from design spec"
+      },
+      {
+        "issue": "Responsive design not working",
+        "solution": "Check breakpoints match exact values in pwa_survey_spec.json responsive_design"
+      },
+      {
+        "issue": "IndexedDB operations failing",
+        "solution": "Verify database schema matches business_logic data_structure exactly"
+      },
+      {
+        "issue": "PWA not installing",
+        "solution": "Check manifest configuration matches build_system pwa_build_config"
+      }
+    ]
+  },
+
+  "deliverable_requirements": {
+    "final_validation": [
+      "Application matches every specification in pwa_survey_spec.json",
+      "All features from feature_list are implemented and working",
+      "Use cases from use_case section are fully supported",
+      "Constraints from design spec are respected",
+      "Implementation phases checklist is 100% complete"
+    ],
+    "documentation": [
+      "README with setup instructions",
+      "Comment complex custom CSS with justification",
+      "Document any deviations from design spec with reasoning"
+    ]
+  },
+
+  "success_definition": "The implementation is successful when it fully realizes the vision described in pwa_survey_spec.json - an enterprise-grade PWA that showcases Fluent UI components while providing robust offline survey management capabilities. Every component, feature, and interaction should match the design specification exactly."
+}

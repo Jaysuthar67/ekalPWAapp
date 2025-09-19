@@ -1,0 +1,656 @@
+{
+  "application_overview": {
+    "name": "PWA Survey Application",
+    "description": "A Progressive Web Application for creating, managing, and analyzing surveys with offline capabilities using MS Teams Fluent UI components",
+    "version": "1.0.0",
+    "type": "PWA (Progressive Web Application)",
+    "primary_purpose": "Demo application showcasing MS Teams Fluent UI components and PWA features",
+    "target_platforms": ["Desktop", "Mobile", "Tablet"],
+    "offline_capabilities": true,
+    "theme_support": ["Light Mode", "Dark Mode", "MS Teams Default Theme"]
+  },
+
+  "technical_stack": {
+    "frontend_framework": "React 18+",
+    "ui_library": "@fluentui/react-components",
+    "routing": "React Router v6",
+    "build_system": "Vite",
+    "package_manager": "npm",
+    "styling": "Fluent UI CSS-in-JS + CSS Modules",
+    "state_management": "React Context + useReducer",
+    "data_persistence": "IndexedDB",
+    "pwa_tools": "Vite PWA Plugin",
+    "charts_library": "Recharts",
+    "file_export": "Papa Parse (CSV), JSON native"
+  },
+
+  "ui_parts": {
+    "layout_structure": {
+      "shell": {
+        "component": "FluentProvider",
+        "description": "Root component providing theme context",
+        "includes": [
+          "Theme Provider",
+          "Dark/Light Mode Toggle",
+          "Global Navigation"
+        ]
+      },
+      "header": {
+        "component": "Custom Header Component",
+        "elements": [
+          {
+            "element": "App Title",
+            "fluent_component": "Title1"
+          },
+          {
+            "element": "Theme Toggle",
+            "fluent_component": "Switch"
+          },
+          {
+            "element": "User Menu",
+            "fluent_component": "Menu + Avatar"
+          },
+          {
+            "element": "Navigation",
+            "fluent_component": "TabList"
+          }
+        ]
+      },
+      "main_content": {
+        "component": "Router Outlet",
+        "description": "Dynamic content area based on current route"
+      },
+      "sidebar": {
+        "component": "Navigation Panel",
+        "visibility": "Desktop only, collapsible",
+        "elements": [
+          {
+            "element": "Navigation Links",
+            "fluent_component": "Nav"
+          }
+        ]
+      }
+    },
+
+    "pages_and_components": {
+      "authentication": {
+        "login_page": {
+          "path": "/login",
+          "components": [
+            {
+              "name": "Login Form",
+              "fluent_components": ["Card", "Input", "Button", "Label", "Text"]
+            }
+          ],
+          "features": [
+            "Hardcoded credentials validation",
+            "Remember me option",
+            "Responsive design"
+          ]
+        },
+        "signup_page": {
+          "path": "/signup",
+          "components": [
+            {
+              "name": "Signup Form",
+              "fluent_components": [
+                "Card",
+                "Input",
+                "Button",
+                "Label",
+                "Text",
+                "Checkbox"
+              ]
+            }
+          ]
+        }
+      },
+
+      "dashboard": {
+        "path": "/dashboard",
+        "components": [
+          {
+            "name": "Stats Cards",
+            "fluent_components": ["Card", "Title2", "Body1", "CounterBadge"]
+          },
+          {
+            "name": "Recent Surveys List",
+            "fluent_components": ["DataGrid", "Button", "Menu"]
+          },
+          {
+            "name": "Quick Actions",
+            "fluent_components": ["Button", "CompoundButton"]
+          }
+        ],
+        "features": [
+          "Survey statistics",
+          "Quick survey creation",
+          "Recent activity"
+        ]
+      },
+
+      "survey_management": {
+        "survey_list_page": {
+          "path": "/surveys",
+          "components": [
+            {
+              "name": "Survey Grid",
+              "fluent_components": [
+                "DataGrid",
+                "Button",
+                "Badge",
+                "Menu",
+                "MenuButton"
+              ]
+            },
+            {
+              "name": "Search and Filter",
+              "fluent_components": ["SearchBox", "Dropdown", "Button"]
+            },
+            {
+              "name": "Bulk Actions",
+              "fluent_components": ["Toolbar", "Button", "Checkbox"]
+            }
+          ]
+        },
+        "survey_builder": {
+          "path": "/surveys/create",
+          "path_edit": "/surveys/edit/:id",
+          "components": [
+            {
+              "name": "Survey Header Form",
+              "fluent_components": ["Input", "Textarea", "Label", "Card"]
+            },
+            {
+              "name": "Question Builder",
+              "fluent_components": [
+                "Card",
+                "Input",
+                "Dropdown",
+                "Button",
+                "Accordion"
+              ]
+            },
+            {
+              "name": "Question Types Panel",
+              "fluent_components": ["Button", "Text", "Divider"]
+            },
+            {
+              "name": "Preview Panel",
+              "fluent_components": ["Card", "Title3", "Body1"]
+            }
+          ],
+          "question_types": [
+            {
+              "type": "multiple_choice",
+              "fluent_components": ["Radio", "RadioGroup", "Label"]
+            },
+            {
+              "type": "checkboxes",
+              "fluent_components": ["Checkbox", "Label"]
+            },
+            {
+              "type": "text_input",
+              "fluent_components": ["Input", "Textarea"]
+            },
+            {
+              "type": "dropdown",
+              "fluent_components": ["Dropdown", "Option"]
+            },
+            {
+              "type": "rating_scale",
+              "fluent_components": ["Slider", "Label"]
+            }
+          ]
+        }
+      },
+
+      "survey_taking": {
+        "survey_view_page": {
+          "path": "/survey/:id",
+          "components": [
+            {
+              "name": "Survey Header",
+              "fluent_components": ["Title1", "Body1", "Card"]
+            },
+            {
+              "name": "Question Renderer",
+              "fluent_components": ["Card", "Label", "ProgressBar"]
+            },
+            {
+              "name": "Navigation Controls",
+              "fluent_components": ["Button", "Toolbar"]
+            },
+            {
+              "name": "Progress Indicator",
+              "fluent_components": ["ProgressBar", "Text"]
+            }
+          ]
+        },
+        "thank_you_page": {
+          "path": "/survey/:id/thank-you",
+          "components": [
+            {
+              "name": "Completion Message",
+              "fluent_components": ["Card", "Title2", "Body1", "Button"]
+            }
+          ]
+        }
+      },
+
+      "analytics": {
+        "survey_results_page": {
+          "path": "/surveys/:id/results",
+          "components": [
+            {
+              "name": "Summary Stats",
+              "fluent_components": ["Card", "Title2", "CounterBadge"]
+            },
+            {
+              "name": "Charts Container",
+              "fluent_components": ["Card", "TabList", "Tab"]
+            },
+            {
+              "name": "Export Controls",
+              "fluent_components": ["Button", "Dropdown", "Menu"]
+            },
+            {
+              "name": "Response List",
+              "fluent_components": ["DataGrid", "Pagination"]
+            }
+          ]
+        }
+      }
+    },
+
+    "responsive_design": {
+      "breakpoints": {
+        "mobile": "< 768px",
+        "tablet": "768px - 1024px",
+        "desktop": "> 1024px"
+      },
+      "responsive_components": [
+        {
+          "component": "Navigation",
+          "mobile": "Bottom tab bar + hamburger menu",
+          "desktop": "Sidebar + top tabs"
+        },
+        {
+          "component": "Survey Builder",
+          "mobile": "Single column, collapsible panels",
+          "desktop": "Multi-column layout with side panels"
+        },
+        {
+          "component": "Data Grid",
+          "mobile": "Card list view",
+          "desktop": "Full table view"
+        }
+      ]
+    },
+
+    "theme_system": {
+      "fluent_themes": [
+        "teamsLightTheme",
+        "teamsDarkTheme",
+        "teamsHighContrastTheme"
+      ],
+      "custom_tokens": {
+        "brand_colors": "MS Teams brand palette",
+        "spacing": "Fluent UI spacing scale",
+        "typography": "Fluent UI type ramp"
+      },
+      "theme_persistence": "localStorage",
+      "theme_toggle_component": {
+        "fluent_component": "Switch",
+        "location": "Header",
+        "labels": ["Light", "Dark"]
+      }
+    }
+  },
+
+  "business_logic": {
+    "authentication": {
+      "mechanism": "Hardcoded credentials",
+      "config_location": "src/config/auth.js",
+      "default_credentials": [
+        {
+          "username": "admin",
+          "password": "demo123",
+          "role": "admin"
+        },
+        {
+          "username": "user",
+          "password": "user123",
+          "role": "user"
+        }
+      ],
+      "session_management": {
+        "storage": "sessionStorage",
+        "token_key": "survey_app_token",
+        "expiry": "8 hours"
+      },
+      "protected_routes": ["/dashboard", "/surveys", "/analytics"]
+    },
+
+    "survey_management": {
+      "data_structure": {
+        "survey": {
+          "id": "string (UUID)",
+          "title": "string",
+          "description": "string",
+          "created_at": "timestamp",
+          "updated_at": "timestamp",
+          "status": "draft | published | closed",
+          "questions": "array of question objects",
+          "settings": "object (anonymous, multiple_responses, etc.)"
+        },
+        "question": {
+          "id": "string (UUID)",
+          "type": "multiple_choice | checkboxes | text | dropdown | rating",
+          "title": "string",
+          "description": "string",
+          "required": "boolean",
+          "options": "array (for choice-based questions)",
+          "validation": "object (min/max length, etc.)"
+        }
+      },
+      "crud_operations": {
+        "create": "Generate UUID, save to IndexedDB",
+        "read": "Query from IndexedDB with filters",
+        "update": "Merge changes, update timestamp",
+        "delete": "Soft delete with status change"
+      },
+      "validation": {
+        "survey_title": "Required, 1-200 characters",
+        "question_title": "Required, 1-500 characters",
+        "minimum_questions": 1,
+        "maximum_questions": 50
+      }
+    },
+
+    "response_collection": {
+      "data_structure": {
+        "response": {
+          "id": "string (UUID)",
+          "survey_id": "string",
+          "submitted_at": "timestamp",
+          "answers": "array of answer objects",
+          "session_id": "string (for anonymous tracking)",
+          "device_info": "object (browser, OS for analytics)"
+        },
+        "answer": {
+          "question_id": "string",
+          "value": "string | array | number",
+          "text_value": "string (for other option)"
+        }
+      },
+      "submission_logic": {
+        "validation": "Client-side validation per question type",
+        "required_check": "Ensure all required questions answered",
+        "offline_queue": "Queue submissions when offline",
+        "sync_strategy": "Auto-sync when connection restored"
+      }
+    },
+
+    "data_analytics": {
+      "calculations": [
+        "Response count per survey",
+        "Completion rate calculation",
+        "Answer distribution for choice questions",
+        "Text response aggregation",
+        "Time-based analytics (daily, weekly submissions)"
+      ],
+      "chart_types": {
+        "pie_chart": "For multiple choice with few options",
+        "bar_chart": "For multiple choice with many options",
+        "line_chart": "For time-based data",
+        "word_cloud": "For text responses (future enhancement)"
+      }
+    },
+
+    "data_export": {
+      "formats": ["JSON", "CSV"],
+      "json_structure": {
+        "survey_metadata": "Survey details and questions",
+        "responses": "Array of all responses with answers"
+      },
+      "csv_structure": {
+        "headers": "Question titles as column headers",
+        "rows": "One row per response",
+        "format": "Flat structure for easy analysis"
+      }
+    },
+
+    "offline_functionality": {
+      "service_worker": {
+        "cache_strategy": "Cache First for static assets, Network First for data",
+        "cache_scope": ["HTML", "CSS", "JS", "Images", "API responses"]
+      },
+      "data_sync": {
+        "conflict_resolution": "Last write wins",
+        "sync_triggers": [
+          "Online event",
+          "Manual sync button",
+          "Periodic check"
+        ],
+        "background_sync": "Queue failed requests for retry"
+      }
+    }
+  },
+
+  "tooling": {
+    "development_tools": {
+      "dev_server": "Vite dev server with HMR",
+      "code_formatting": "Prettier",
+      "linting": "ESLint with React and Accessibility rules",
+      "type_checking": "PropTypes (or TypeScript as enhancement)",
+      "git_hooks": "Husky for pre-commit hooks"
+    },
+
+    "testing_framework": {
+      "unit_tests": "Vitest + React Testing Library",
+      "e2e_tests": "Playwright (optional)",
+      "coverage": "Vitest coverage reports",
+      "test_structure": "Co-located test files with .test.js extension"
+    },
+
+    "debugging_tools": {
+      "browser_devtools": "React DevTools, Redux DevTools",
+      "error_tracking": "Console logging with different levels",
+      "performance": "React Profiler, Lighthouse audits"
+    },
+
+    "pwa_tooling": {
+      "manifest_generator": "Vite PWA plugin auto-generation",
+      "icon_generator": "PWA icon generator for multiple sizes",
+      "service_worker": "Workbox via Vite PWA plugin",
+      "pwa_validation": "Lighthouse PWA audit"
+    }
+  },
+
+  "build_system": {
+    "vite_configuration": {
+      "entry_point": "src/main.jsx",
+      "build_output": "dist/",
+      "asset_optimization": {
+        "code_splitting": "Automatic route-based splitting",
+        "tree_shaking": "Remove unused Fluent UI components",
+        "minification": "Terser for JS, cssnano for CSS",
+        "image_optimization": "WebP conversion, responsive images"
+      },
+      "dev_features": {
+        "hot_reload": "React Fast Refresh",
+        "css_hot_reload": "Instant CSS updates",
+        "error_overlay": "Full-screen error display"
+      }
+    },
+
+    "pwa_build_config": {
+      "service_worker": {
+        "type": "generateSW",
+        "strategies": {
+          "precache": ["HTML", "CSS", "JS", "essential images"],
+          "runtime_cache": [
+            {
+              "urlPattern": "/api/.*",
+              "handler": "NetworkFirst"
+            },
+            {
+              "urlPattern": "/images/.*",
+              "handler": "CacheFirst"
+            }
+          ]
+        }
+      },
+      "manifest": {
+        "name": "PWA Survey Application",
+        "short_name": "SurveyApp",
+        "description": "Create and manage surveys offline",
+        "theme_color": "#6264A7",
+        "background_color": "#ffffff",
+        "display": "standalone",
+        "orientation": "any",
+        "icons": [
+          {
+            "src": "/icons/icon-192.png",
+            "sizes": "192x192",
+            "type": "image/png"
+          },
+          {
+            "src": "/icons/icon-512.png",
+            "sizes": "512x512",
+            "type": "image/png"
+          }
+        ]
+      }
+    },
+
+    "optimization": {
+      "bundle_analysis": "Bundle analyzer for size monitoring",
+      "performance_budgets": {
+        "initial_bundle": "< 300kb gzipped",
+        "route_chunks": "< 100kb each",
+        "images": "< 500kb total"
+      },
+      "compression": "Gzip + Brotli compression",
+      "cdn_strategy": "Static assets via CDN (if deployed)"
+    },
+
+    "deployment": {
+      "build_command": "npm run build",
+      "preview_command": "npm run preview",
+      "static_hosting": "Optimized for Netlify, Vercel, or GitHub Pages",
+      "environment_config": {
+        "development": "Local IndexedDB, debug logging",
+        "production": "Optimized bundles, error tracking"
+      }
+    }
+  },
+
+  "file_structure": {
+    "src": {
+      "components": {
+        "common": ["Header", "Sidebar", "Layout", "ThemeToggle"],
+        "auth": ["LoginForm", "SignupForm", "ProtectedRoute"],
+        "surveys": ["SurveyList", "SurveyBuilder", "QuestionEditor"],
+        "questions": ["MultipleChoice", "TextInput", "Dropdown", "Checkbox"],
+        "analytics": ["ChartContainer", "StatsCard", "ExportButton"]
+      },
+      "pages": [
+        "Dashboard",
+        "SurveyList",
+        "SurveyBuilder",
+        "SurveyView",
+        "Analytics"
+      ],
+      "hooks": ["useAuth", "useSurveys", "useOffline", "useTheme"],
+      "services": [
+        "authService",
+        "surveyService",
+        "storageService",
+        "exportService"
+      ],
+      "utils": ["validation", "dateHelpers", "chartHelpers", "constants"],
+      "config": ["auth.js", "theme.js", "app.js"],
+      "styles": ["global.css", "themes.css"]
+    }
+  },
+
+  "dependencies": {
+    "core": {
+      "react": "^18.2.0",
+      "react-dom": "^18.2.0",
+      "react-router-dom": "^6.8.0"
+    },
+    "ui": {
+      "@fluentui/react-components": "^9.46.0",
+      "@fluentui/react-icons": "^2.0.0"
+    },
+    "data": {
+      "idb": "^7.1.1",
+      "uuid": "^9.0.0"
+    },
+    "charts": {
+      "recharts": "^2.5.0"
+    },
+    "export": {
+      "papaparse": "^5.4.0"
+    },
+    "pwa": {
+      "vite-plugin-pwa": "^0.14.0",
+      "workbox-window": "^6.5.0"
+    },
+    "dev": {
+      "vite": "^4.1.0",
+      "@vitejs/plugin-react": "^3.1.0",
+      "eslint": "^8.35.0",
+      "prettier": "^2.8.0",
+      "vitest": "^0.28.0"
+    }
+  },
+
+  "implementation_phases": {
+    "phase_1": {
+      "name": "Core Setup & Authentication",
+      "tasks": [
+        "Vite + React setup",
+        "Fluent UI integration",
+        "Basic routing",
+        "Authentication system",
+        "Theme system",
+        "IndexedDB setup"
+      ]
+    },
+    "phase_2": {
+      "name": "Survey Management",
+      "tasks": [
+        "Survey CRUD operations",
+        "Question builder UI",
+        "Question type components",
+        "Survey list and dashboard",
+        "Basic responsive design"
+      ]
+    },
+    "phase_3": {
+      "name": "Survey Taking & Analytics",
+      "tasks": [
+        "Survey rendering engine",
+        "Response collection",
+        "Data visualization",
+        "Export functionality",
+        "Analytics dashboard"
+      ]
+    },
+    "phase_4": {
+      "name": "PWA & Polish",
+      "tasks": [
+        "Service worker implementation",
+        "Offline functionality",
+        "PWA manifest",
+        "Performance optimization",
+        "Mobile responsiveness",
+        "Testing and bug fixes"
+      ]
+    }
+  }
+}

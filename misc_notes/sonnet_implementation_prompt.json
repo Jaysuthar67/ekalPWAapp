@@ -1,0 +1,313 @@
+{
+  "project_context": {
+    "role": "You are an expert React developer tasked with implementing a PWA Survey Application",
+    "primary_objective": "Create an enterprise-grade UI showcase demonstrating Fluent UI components with working IndexedDB storage",
+    "success_criteria": [
+      "Stunning responsive design using ONLY default Fluent UI components and themes",
+      "Full offline functionality with IndexedDB for all data operations",
+      "Enterprise-grade professional appearance across all device sizes",
+      "Comprehensive demonstration of Fluent UI component capabilities"
+    ]
+  },
+
+  "critical_constraints": {
+    "styling_restrictions": {
+      "ABSOLUTE_RULE": "NEVER write custom CSS or modify default Fluent UI themes",
+      "allowed_styling": "ONLY default Fluent UI design tokens, spacing, and color systems",
+      "forbidden_actions": [
+        "Custom CSS files beyond global resets",
+        "Overriding Fluent UI component styles",
+        "Creating custom theme tokens",
+        "Using inline styles that override Fluent UI defaults"
+      ]
+    },
+    "theme_usage": {
+      "light_theme": "teamsLightTheme (default, primary theme)",
+      "dark_theme": "teamsDarkTheme",
+      "theme_switching": "Simple toggle using Fluent UI Switch component",
+      "theme_persistence": "localStorage for demo purposes"
+    },
+    "browser_storage": {
+      "CRITICAL": "Use ONLY IndexedDB for data persistence - NO localStorage for data",
+      "reason": "Full offline PWA capabilities with structured data storage",
+      "implementation": "Use 'idb' library for IndexedDB operations"
+    }
+  },
+
+  "technical_requirements": {
+    "tech_stack": {
+      "framework": "React 18+ with Vite build system",
+      "ui_library": "@fluentui/react-components (latest stable)",
+      "icons": "@fluentui/react-icons",
+      "routing": "react-router-dom v6",
+      "indexeddb": "idb library for database operations",
+      "charts": "recharts with Fluent UI color integration",
+      "utilities": ["uuid", "papaparse for CSV export"]
+    },
+    "architecture_patterns": {
+      "state_management": "React Context + useReducer for global state",
+      "data_layer": "Custom hooks for IndexedDB operations (useDatabase, useSurveys, etc.)",
+      "routing": "Protected routes with authentication context",
+      "responsive_design": "Fluent UI responsive patterns only"
+    }
+  },
+
+  "ui_implementation_guidelines": {
+    "layout_structure": {
+      "app_shell": {
+        "root": "FluentProvider with theme context",
+        "header": "CommandBar with branding, actions, theme toggle, user menu",
+        "navigation": {
+          "desktop": "Collapsible Nav component sidebar (280px width)",
+          "mobile": "Bottom TabList + Drawer for secondary navigation"
+        },
+        "main_content": "Responsive content area with proper Fluent UI spacing tokens"
+      }
+    },
+    "component_showcase_priorities": [
+      {
+        "component_family": "Data Display",
+        "components": ["DataGrid", "List", "Card", "Badge", "CounterBadge"],
+        "usage_context": "Survey listings, response data, dashboard KPIs"
+      },
+      {
+        "component_family": "Forms & Inputs",
+        "components": ["Input", "Textarea", "Dropdown", "Checkbox", "RadioGroup", "Switch", "Slider"],
+        "usage_context": "Survey builder, question types, settings"
+      },
+      {
+        "component_family": "Navigation & Actions",
+        "components": ["CommandBar", "Nav", "TabList", "Button", "SplitButton", "MenuButton"],
+        "usage_context": "App navigation, survey actions, bulk operations"
+      },
+      {
+        "component_family": "Feedback & Status",
+        "components": ["ProgressBar", "Spinner", "MessageBar", "Dialog", "Drawer"],
+        "usage_context": "Survey progress, loading states, notifications, modals"
+      }
+    ],
+    "responsive_implementation": {
+      "breakpoints": {
+        "mobile": "< 768px - Single column, touch-optimized",
+        "tablet": "768px - 1024px - Hybrid layout",
+        "desktop": "> 1024px - Multi-column enterprise layout"
+      },
+      "component_adaptations": {
+        "DataGrid": "Transform to List with Card layout on mobile",
+        "CommandBar": "Overflow menu for secondary actions on smaller screens",
+        "Dialog": "Full-screen Drawer on mobile, centered Dialog on desktop",
+        "Form_layouts": "Single column mobile, multi-column desktop with logical grouping"
+      }
+    }
+  },
+
+  "data_architecture": {
+    "indexeddb_schema": {
+      "database_name": "SurveyAppDB",
+      "version": 1,
+      "object_stores": [
+        {
+          "name": "surveys",
+          "keyPath": "id",
+          "indexes": [
+            {"name": "title", "keyPath": "title", "unique": false},
+            {"name": "status", "keyPath": "status", "unique": false},
+            {"name": "createdAt", "keyPath": "createdAt", "unique": false}
+          ]
+        },
+        {
+          "name": "responses",
+          "keyPath": "id",
+          "indexes": [
+            {"name": "surveyId", "keyPath": "surveyId", "unique": false},
+            {"name": "submittedAt", "keyPath": "submittedAt", "unique": false}
+          ]
+        },
+        {
+          "name": "users",
+          "keyPath": "id",
+          "indexes": [
+            {"name": "username", "keyPath": "username", "unique": true}
+          ]
+        }
+      ]
+    },
+    "data_models": {
+      "survey": {
+        "id": "string (uuid)",
+        "title": "string (required, 1-200 chars)",
+        "description": "string (optional)",
+        "questions": "array of question objects",
+        "status": "enum: draft | published | closed",
+        "createdAt": "ISO timestamp",
+        "updatedAt": "ISO timestamp",
+        "createdBy": "string (user id)"
+      },
+      "question": {
+        "id": "string (uuid)",
+        "type": "enum: multiple_choice | checkboxes | text | textarea | dropdown | rating",
+        "title": "string (required)",
+        "description": "string (optional)",
+        "required": "boolean",
+        "options": "array (for choice-based questions)",
+        "validation": "object (min/max length, etc.)"
+      },
+      "response": {
+        "id": "string (uuid)",
+        "surveyId": "string (foreign key)",
+        "answers": "array of answer objects",
+        "submittedAt": "ISO timestamp",
+        "sessionId": "string (anonymous tracking)"
+      }
+    }
+  },
+
+  "authentication_system": {
+    "implementation": "Hardcoded credentials for demo purposes",
+    "config_location": "src/config/auth.js",
+    "demo_users": [
+      {
+        "id": "admin-001",
+        "username": "admin",
+        "password": "demo123",
+        "role": "admin",
+        "displayName": "Admin User",
+        "avatar": "Generate using Fluent UI Persona component"
+      },
+      {
+        "id": "user-001", 
+        "username": "user",
+        "password": "user123",
+        "role": "user",
+        "displayName": "Demo User",
+        "avatar": "Generate using Fluent UI Persona component"
+      }
+    ],
+    "session_management": {
+      "storage": "sessionStorage (not IndexedDB)",
+      "token_structure": "Simple JWT-like object with user info",
+      "expiry": "8 hours for demo purposes"
+    }
+  },
+
+  "feature_implementation_priority": {
+    "phase_1_mvp": [
+      "Project setup with Vite + React + Fluent UI",
+      "Theme provider and switching functionality",
+      "IndexedDB database initialization and connection",
+      "Authentication system with hardcoded credentials",
+      "Basic routing with protected routes",
+      "Responsive app shell with CommandBar and Nav"
+    ],
+    "phase_2_core": [
+      "Survey CRUD operations with IndexedDB",
+      "Survey list with enterprise DataGrid",
+      "Survey builder with rich question types",
+      "Dashboard with KPI cards and stats",
+      "Mobile-responsive navigation patterns"
+    ],
+    "phase_3_advanced": [
+      "Survey taking interface with progress tracking",
+      "Response collection and storage",
+      "Analytics dashboard with charts (recharts + Fluent UI colors)",
+      "Data export functionality (JSON/CSV)",
+      "Advanced responsive optimizations"
+    ],
+    "phase_4_pwa": [
+      "Service worker for offline functionality",
+      "PWA manifest for installability",
+      "Offline sync capabilities",
+      "Performance optimizations",
+      "Final UI polish and accessibility validation"
+    ]
+  },
+
+  "implementation_instructions": {
+    "code_structure": {
+      "src_organization": {
+        "components": "Reusable UI components organized by feature",
+        "pages": "Route-based page components",
+        "hooks": "Custom hooks for data operations and state management",
+        "services": "IndexedDB operations, auth service, data export utilities",
+        "contexts": "Theme context, auth context, app state context",
+        "utils": "Helper functions, constants, validators"
+      },
+      "naming_conventions": {
+        "components": "PascalCase (SurveyBuilder.jsx)",
+        "hooks": "camelCase with 'use' prefix (useSurveys.js)",
+        "services": "camelCase with descriptive names (surveyService.js)",
+        "constants": "UPPER_SNAKE_CASE"
+      }
+    },
+    "development_approach": {
+      "component_development": [
+        "Start with Fluent UI component documentation",
+        "Build responsive behavior from mobile-first approach",
+        "Test on multiple screen sizes during development",
+        "Ensure accessibility through Fluent UI defaults"
+      ],
+      "data_operations": [
+        "Create IndexedDB service layer first",
+        "Implement CRUD operations with error handling",
+        "Add offline detection and sync capabilities",
+        "Test data persistence across browser sessions"
+      ],
+      "responsive_testing": [
+        "Test on mobile (320px - 767px)",
+        "Test on tablet (768px - 1024px)", 
+        "Test on desktop (1025px+)",
+        "Verify touch targets on mobile devices"
+      ]
+    }
+  },
+
+  "quality_standards": {
+    "ui_excellence": [
+      "Enterprise-grade professional appearance",
+      "Smooth responsive behavior across all breakpoints",
+      "Consistent spacing using Fluent UI tokens",
+      "Proper loading states and error handling",
+      "Accessible design through Fluent UI compliance"
+    ],
+    "functionality_requirements": [
+      "Full offline capability - app must work without internet",
+      "Data persistence across browser sessions",
+      "Survey creation, editing, and deletion",
+      "Response collection and analysis",
+      "Data export in JSON and CSV formats"
+    ],
+    "performance_targets": [
+      "Fast initial load with code splitting",
+      "Smooth interactions and animations",
+      "Efficient IndexedDB queries",
+      "Responsive UI updates",
+      "PWA performance scores > 90"
+    ]
+  },
+
+  "deliverables_checklist": [
+    "✅ Working PWA with offline capabilities",
+    "✅ Enterprise-grade responsive UI using only default Fluent UI",
+    "✅ Complete survey creation, management, and analytics workflow", 
+    "✅ IndexedDB integration for all data persistence",
+    "✅ Theme switching between light and dark modes",
+    "✅ Data export functionality (JSON/CSV)",
+    "✅ Mobile, tablet, and desktop responsive design",
+    "✅ Authentication system with hardcoded demo credentials",
+    "✅ Service worker for offline functionality",
+    "✅ PWA manifest for app installation"
+  ],
+
+  "common_pitfalls_to_avoid": [
+    "DO NOT create any custom CSS that overrides Fluent UI defaults",
+    "DO NOT use localStorage for data storage - use IndexedDB only", 
+    "DO NOT build custom components when Fluent UI alternatives exist",
+    "DO NOT ignore mobile responsiveness - test thoroughly",
+    "DO NOT skip offline functionality - it's core to the PWA demo",
+    "DO NOT overcomplicate authentication - keep it simple for demo",
+    "DO NOT forget to showcase the breadth of Fluent UI components",
+    "DO NOT sacrifice UI polish for feature completeness"
+  ],
+
+  "success_definition": "A visually stunning, enterprise-grade PWA that showcases the power and beauty of Microsoft's Fluent UI design system while providing a fully functional offline survey management experience. The application should feel like a premium business application that could be deployed in a corporate environment, demonstrating both the technical capabilities of PWAs and the design excellence of Fluent UI components."
+}
