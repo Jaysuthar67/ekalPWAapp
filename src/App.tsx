@@ -6,6 +6,10 @@ import { SurveyTakingPage } from './pages/SurveyTakingPage';
 import { ThankYouPage } from './pages/ThankYouPage';
 import { AnalyticsPage } from './pages/AnalyticsPage';
 import { ReportsPage } from './pages/ReportsPage';
+import RegistrationListPage from './pages/RegistrationListPage';
+import RegistrationTakingPage from './pages/RegistrationTakingPage';
+import RegistrationThankYouPage from './pages/RegistrationThankYouPage';
+import StudentRegistrationForm from './pages/StudentRegistrationForm';
 
 const AppContent = () => {
   return (
@@ -14,6 +18,10 @@ const AppContent = () => {
         <Route path="/" element={<SurveyListPage />} />
         <Route path="/survey/:surveyId" element={<SurveyTakingPage />} />
         <Route path="/thank-you" element={<ThankYouPage />} />
+        <Route path="/registration" element={<RegistrationListPage />} />
+        <Route path="/registration/student-form" element={<StudentRegistrationForm />} />
+        <Route path="/registration/:registrationId" element={<RegistrationTakingPage />} />
+        <Route path="/registration/thank-you" element={<RegistrationThankYouPage />} />
         <Route path="/analytics" element={<AnalyticsPage />} />
         <Route path="/reports" element={<ReportsPage />} />
       </Routes>
