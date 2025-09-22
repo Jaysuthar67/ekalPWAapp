@@ -13,7 +13,7 @@ import {
 import { PanelLeftExpand24Regular, PanelLeftContract24Regular, WeatherMoon24Regular, WeatherSunny24Regular, ArrowDownload24Regular } from '@fluentui/react-icons';
 import { useTheme } from '../contexts/ThemeContext';
 import { usePWAInstall } from '../hooks/usePWAInstall';
-import logo from '../assets/img/logo.png';
+
 
 const useStyles = makeStyles({
   root: {
@@ -96,7 +96,7 @@ export const Header: React.FC<HeaderProps> = ({ isNavCollapsed, toggleNav }) => 
           aria-label="Toggle Navigation"
           className={styles.navButton}
         />
-        <img src={logo} alt="Ekal Foundation Logo" className={styles.logo} />
+        <img src={`${import.meta.env.BASE_URL}logo.svg`} alt="Ekal Foundation Logo" className={styles.logo} />
         <h3 className={styles.title}>Ekal Foundation Survey</h3>
       </div>
       <div className={styles.right}>
