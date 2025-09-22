@@ -8,9 +8,6 @@ import {
   Tooltip,
   Legend,
   ResponsiveContainer,
-  PieChart,
-  Pie,
-  Cell,
 } from 'recharts';
 import { getAllResponses, getAllRegistrations } from '../services/db';
 import surveys from '../data/surveys.json';
