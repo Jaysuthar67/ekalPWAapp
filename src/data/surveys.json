@@ -1,62 +1,380 @@
 [
   {
-    "id": "employee-satisfaction",
-    "title": "Employee Satisfaction Survey",
+    "id": "baseline-survey-adarsh-sanch",
+    "title": "Baseline survey for Adarsh Sanch",
     "questions": [
-      { "id": "q1", "text": "How satisfied are you with your current role?", "type": "rating", "options": 5 },
-      { "id": "q2", "text": "What do you enjoy most about working here?", "type": "text" },
-      { "id": "q3", "text": "Which of the following benefits are most important to you?", "type": "checkboxes", "options": ["Health Insurance", "Paid Time Off", "Remote Work Options", "401k Matching"] },
-      { "id": "q4", "text": "How would you rate the team collaboration?", "type": "rating", "options": 5 },
-      { "id": "q5", "text": "Do you feel you have opp      npx serve -s dist --host      npx serve -s dist --hostortunities for growth?", "type": "multiple_choice", "options": ["Yes", "No"] },
-      { "id": "q6", "text": "What is your primary mode of transportation to work?", "type": "dropdown", "options": ["Car", "Public Transit", "Bike", "Walk", "Remote"] },
-      { "id": "q7", "text": "Any suggestions for improving the work environment?", "type": "textarea" },
-      { "id": "q8", "text": "How likely are you to recommend our company to a friend?", "type": "rating", "options": 10 },
-      { "id": "q9", "text": "I feel valued at this company.", "type": "multiple_choice", "options": ["Strongly Agree", "Agree", "Neutral", "Disagree", "Strongly Disagree"] },
-      { "id": "q10", "text": "What training or development opportunities would you like to see?", "type": "text" }
-    ]
-  },
-  {
-    "id": "product-feedback",
-    "title": "Product Feedback Survey",
-    "questions": [
-      { "id": "q1", "text": "How often do you use our product?", "type": "dropdown", "options": ["Daily", "Weekly", "Monthly", "Rarely"] },
-      { "id": "q2", "text": "Which features do you use most often?", "type": "checkboxes", "options": ["Feature A", "Feature B", "Feature C", "Feature D"] },
-      { "id": "q3", "text": "How would you rate the user-friendliness of the product?", "type": "rating", "options": 5 },
-      { "id": "q4", "text": "What is one thing you would improve?", "type": "textarea" },
-      { "id": "q5", "text": "How does our product compare to competitors?", "type": "text" },
-      { "id": "q6", "text": "Did you find our pricing to be fair?", "type": "multiple_choice", "options": ["Yes", "No"] },
-      { "id": "q7", "text": "What other products would you like us to offer?", "type": "text" },
-      { "id": "q8", "text": "Overall, how satisfied are you with the product?", "type": "rating", "options": 10 }
-    ]
-  },
-  {
-    "id": "event-feedback",
-    "title": "Event Feedback Survey",
-    "questions": [
-      { "id": "q1", "text": "How did you hear about this event?", "type": "dropdown", "options": ["Social Media", "Email", "Friend", "Other"] },
-      { "id": "q2", "text": "Please rate the event venue.", "type": "rating", "options": 5 },
-      { "id": "q3", "text": "Which sessions did you attend?", "type": "checkboxes", "options": ["Keynote", "Workshop A", "Panel Discussion", "Workshop B"] },
-      { "id": "q4", "text": "How would you rate the quality of the speakers?", "type": "rating", "options": 5 },
-      { "id": "q5", "text": "What was the most valuable part of the event for you?", "type": "textarea" },
-      { "id": "q6", "text": "How likely are you to attend a future event?", "type": "rating", "options": 10 }
-    ]
-  },
-  {
-    "id": "customer-experience",
-    "title": "Customer Experience Survey",
-    "questions": [
-        { "id": "q1", "text": "How would you rate your overall experience with our service?", "type": "rating", "options": 5 },
-        { "id": "q2", "text": "Was our team professional and courteous?", "type": "multiple_choice", "options": ["Yes", "No"] },
-        { "id": "q3", "text": "How quickly was your issue resolved?", "type": "dropdown", "options": ["Instantly", "Within a few hours", "Within 24 hours", "Took longer than 24 hours"] },
-        { "id": "q4", "text": "Which of the following words would you use to describe our service?", "type": "checkboxes", "options": ["Reliable", "Fast", "Friendly", "Helpful", "Inefficient", "Slow"] },
-        { "id": "q5", "text": "What could we do to improve your experience?", "type": "textarea" },
-        { "id": "q6", "text": "How easy was it to find the information you were looking for on our website?", "type": "rating", "options": 5 },
-        { "id": "q7", "text": "Did you use our online chat support?", "type": "multiple_choice", "options": ["Yes", "No"] },
-        { "id": "q8", "text": "If yes, how would you rate the chat support?", "type": "rating", "options": 5 },
-        { "id": "q9", "text": "How likely are you to use our services again?", "type": "rating", "options": 10 },
-        { "id": "q10", "text": "What was the primary reason for your visit today?", "type": "text" },
-        { "id": "q11", "text": "Do you have any other comments or suggestions?", "type": "textarea" },
-        { "id": "q12", "text": "Would you recommend us to a friend or colleague?", "type": "multiple_choice", "options": ["Yes", "No"] }
+      { 
+        "id": "q1", 
+        "text": "Center Location (केंद्र का नाम)", 
+        "type": "multiple_choice", 
+        "options": ["Adarsh Sanch , Karoli", "Adarsh Sanch , Doongi", "Adarsh Sanch , Sahson", "Adarsh Sanch , Bikapur"] 
+      },
+      { 
+        "id": "q2", 
+        "text": "Village Code (गाँव का कोड)", 
+        "type": "text" 
+      },
+      { 
+        "id": "q3", 
+        "text": "Village Name (गाँव का नाम)", 
+        "type": "text" 
+      },
+      { 
+        "id": "q4", 
+        "text": "Head of the family (परिवार के मुख्य सदस्य का नाम)", 
+        "type": "text" 
+      },
+      { 
+        "id": "q5", 
+        "text": "AADHAR Number (आधार नंबर)", 
+        "type": "text" 
+      },
+      { 
+        "id": "q6", 
+        "text": "Mobile Number (संपर्क नंबर)", 
+        "type": "text" 
+      },
+      { 
+        "id": "q7", 
+        "text": "Religion (धर्म)", 
+        "type": "multiple_choice", 
+        "options": ["Hindu (हिंदू)", "Muslim (मुसलमान)", "Sikh (सिख)", "Christian (ईसाई)"] 
+      },
+      { 
+        "id": "q8", 
+        "text": "Gender (लिंग)", 
+        "type": "multiple_choice", 
+        "options": ["Male", "Female"] 
+      },
+      { 
+        "id": "q9", 
+        "text": "Age (उम्र)", 
+        "type": "multiple_choice", 
+        "options": ["<= 20 Year", "20 To 25 Year", "25 To 30 Year", "30 To 35 Year", "35 To 40 Year", "40 To 45 Year", "45 To 50 Year", "50 To 55 Year", "55 To 60 Year", "60 To 65 Year", "65 To 70 Year", "70 To 75 Year", "75 To 80 Year", "Above 80 Year"] 
+      },
+      { 
+        "id": "q10", 
+        "text": "Average Education level of the family (परिवार का औसत शिक्षा स्तर)", 
+        "type": "multiple_choice", 
+        "options": ["Below 8th", "Above 10th", "Above 12th", "Above Graduation", "Above Post Graduation", "Other"] 
+      },
+      { 
+        "id": "q11", 
+        "text": "Occupation of the family (परिवार का आमदनी का स्रोत)", 
+        "type": "multiple_choice", 
+        "options": ["Agriculture (खेती)", "Agriculture Based Marketing (खेती आधारित खरीद बिक्री)", "Agriculture Labor (किसी के यंहा खेती का काम करना)", "Animal husbandry (पशुपालन)", "Rural entrepreneur (गाँव आधारित कोई भी कम करना)", "GOV Employee (सरकारी नोकरी)", "PVT Employee (प्राइवेट नोकरी)", "Other"] 
+      },
+      { 
+        "id": "q12", 
+        "text": "Total number of male member in family (परिवार में पुरुषों की संख्या)", 
+        "type": "multiple_choice", 
+        "options": ["1", "2", "3", "4", "5", "6", "7", "8", "Other"] 
+      },
+      { 
+        "id": "q13", 
+        "text": "Total number of female member in family (परिवार में स्त्रियों की संख्या)", 
+        "type": "multiple_choice", 
+        "options": ["1", "2", "3", "4", "5", "6", "7", "8", "Other"] 
+      },
+      { 
+        "id": "q14", 
+        "text": "Children Schooling (बच्चों कि शिक्षा किस प्रकार विद्यालय से हुवा है)", 
+        "type": "multiple_choice", 
+        "options": ["GOV. School (सरकारी स्कूल)", "PVT School (प्राइवेट स्कूल)", "No"] 
+      },
+      { 
+        "id": "q15", 
+        "text": "Average Class of the children (उच्चतम क्लास)", 
+        "type": "multiple_choice", 
+        "options": ["Upto 8th", "Above 10th", "Above 12th", "Above Graduate", "Above Post Graduate", "Other"] 
+      },
+      { 
+        "id": "q16", 
+        "text": "Attendance (स्कूल में छात्रों कि उपस्तिथि)", 
+        "type": "dropdown", 
+        "options": ["Regular (नियमित)", "Irregular (अनियमित)"] 
+      },
+      { 
+        "id": "q17", 
+        "text": "Teacher Attendance (स्कूल में शिक्षकों की उपस्तिथि)", 
+        "type": "dropdown", 
+        "options": ["Regular (नियमित)", "Irregular (अनियमित)"] 
+      },
+      { 
+        "id": "q18", 
+        "text": "Children Performance in school (स्कूल में बच्चों के प्रदर्शन)", 
+        "type": "dropdown", 
+        "options": ["Satisfactory (खुश हैं)", "No Satisfactory (खुश नहीं हैं)"] 
+      },
+      { 
+        "id": "q19", 
+        "text": "Which type of job the trained persons are doing?", 
+        "type": "checkboxes", 
+        "options": ["GOV Employment", "PVT Employment", "Self Employment", "Skill related shop", "Any other shop", "Not any work"] 
+      },
+      { 
+        "id": "q20", 
+        "text": "Is there any skill training center located in nearby your village? (क्या आपके गांव के आस-पास कोई कौशल प्रशिक्षण केंद्र है?)", 
+        "type": "multiple_choice", 
+        "options": ["Yes", "No"] 
+      },
+      { 
+        "id": "q21", 
+        "text": "Distance from village to nearby skill training center? (गांव से नजदीकी कौशल प्रशिक्षण केंद्र की दूरी?)", 
+        "type": "multiple_choice", 
+        "options": ["1 To 2 KM", "2 To 5 KM", "5 To 10 KM", "10 To 15 KM", "15 To 20 KM", "20 To 25 KM", "Above 25 KM"] 
+      },
+      { 
+        "id": "q22", 
+        "text": "Means of traveling? (यात्रा का साधन?)", 
+        "type": "multiple_choice", 
+        "options": ["Walking by own feet", "Bicycle", "Motor Cycle", "Auto Rickshaw", "Bus", "Other Publics Transport"] 
+      },
+      { 
+        "id": "q23", 
+        "text": "Expenses of traveling on per day basis? (प्रति दिन के हिसाब से यात्रा का खर्च?)", 
+        "type": "multiple_choice", 
+        "options": ["No", "10 To 20 Rs", "20 To 50 Rs", "50 To 100 Rs", "Above 100 Rs"] 
+      },
+      { 
+        "id": "q24", 
+        "text": "Which type of skill training are running there and their income? (वहां किस प्रकार के कौशल प्रशिक्षण चल रहे हैं और उनकी आय क्या है?)", 
+        "type": "grid", 
+        "gridRows": ["Tailoring", "Computer", "Electrician", "Plumbing", "Fitter", "Rural art", "Other"],
+        "gridColumns": ["Below 25,000", "25,000 To 50,000", "50,000 To 1,00,000", "1,00,000 To 1,50,000", "1,50,000 To 2,00,000", "Above 2,00,000", "No Income"]
+      },
+      { 
+        "id": "q25", 
+        "text": "Which type of job will be available after taking training? (ट्रेनिंग लेने के बाद किस तरह की नौकरी मिलेगी?)", 
+        "type": "checkboxes", 
+        "options": ["GOV Employment", "PVT Employment", "Self Employment", "Skill related shop", "Any other shop", "Not any work"] 
+      },
+      { 
+        "id": "q26", 
+        "text": "Village Name (गाँव का नाम)", 
+        "type": "text" 
+      },
+      { 
+        "id": "q27", 
+        "text": "Block Name (प्रखंड का नाम)", 
+        "type": "text" 
+      },
+      { 
+        "id": "q28", 
+        "text": "District (जिला का नाम)", 
+        "type": "text" 
+      },
+      { 
+        "id": "q29", 
+        "text": "Distance From Main Road (मुख्य सड़क से घर कि दुरी)", 
+        "type": "multiple_choice", 
+        "options": ["On Road", "Below 1 KM", "1 To 2 KM", "3 To 4 KM", "5 To 6 KM", "7 To 8 KM", "9 To 10 KM", "Above 10 KM"] 
+      },
+      { 
+        "id": "q30", 
+        "text": "Distance From Block (प्रखंड से घर की दुरी)", 
+        "type": "multiple_choice", 
+        "options": ["<5 KM", "5 To 10 KM", "10 To 15 KM", "15 To 20 KM", "20 To 25 KM", "25 To 30 KM", "30 To 35 KM", "35 To 40 KM", "40 To 45 KM", "45 To 50 KM", "Above 50 KM"] 
+      },
+      { 
+        "id": "q31", 
+        "text": "Have you Your own house? (आपका अपना घर है)", 
+        "type": "multiple_choice", 
+        "options": ["Yes", "No"] 
+      },
+      { 
+        "id": "q32", 
+        "text": "Type of house (किस प्रकार का घर है)", 
+        "type": "multiple_choice", 
+        "options": ["Pakka", "Kacha"] 
+      },
+      { 
+        "id": "q33", 
+        "text": "Drinking water connection (पिने के पानी का व्यवस्था)", 
+        "type": "dropdown", 
+        "options": ["Well (कूंआ)", "Borewell (बोरिंग)", "Pond (तालाब)", "GOV. supply (सरकारी व्यवस्था)", "River (नदी)"] 
+      },
+      { 
+        "id": "q34", 
+        "text": "Which infrastructure facilities do you have in your house? (आपके घर में कौन सी सुविधाएं हैं?)", 
+        "type": "checkboxes", 
+        "options": [
+          "Electricity connection (बिजली का कनेक्शन)",
+          "Lavatory (शोचालय)",
+          "Soak pit (सोकपिट)",
+          "Drainage system for waste water (जल निकासी वयवस्था)",
+          "Road connectivity (सड़क से घर का सम्पर्क)"
+        ]
+      },
+      { 
+        "id": "q35", 
+        "text": "Land ownership (जमीन है)", 
+        "type": "multiple_choice", 
+        "options": ["Owned", "Leased", "Nil"] 
+      },
+      { 
+        "id": "q36", 
+        "text": "How much land (acer)? (कितना जमीन है)", 
+        "type": "multiple_choice", 
+        "options": ["< 1 Acer", "1 To 2 Acer", "2 To 3 Acer", "3 To 4 Acer", "4 To 5 Acer", "Above 5 Acer", "0 Acer"] 
+      },
+      { 
+        "id": "q37", 
+        "text": "Total Organic & Farming Land (Acer) (प्राकृतिक एवं गोबर से कितने क्षेत्र में खेती करते हैं)", 
+        "type": "multiple_choice", 
+        "options": ["<1 Acer", "1 To 2 Acer", "2 To 3 Acer", "3 To 4 Acer", "4 To 5 Acer", "Above 5 Acer", "0 Acer"] 
+      },
+      { 
+        "id": "q38", 
+        "text": "Total Chemical (Plover) farming land (Acer) (खाद का प्रयोग से कितने क्षेत्र में खेती करते हैं)", 
+        "type": "multiple_choice", 
+        "options": ["< 1 Acer", "1 To 2 Acer", "2 To 3 Acer", "3 To 4 Acer", "4 To 5 Acer", "Above 5 Acer", "0 Acer"] 
+      },
+      { 
+        "id": "q39", 
+        "text": "Irrigation facility (सिंचाई सुविधा)", 
+        "type": "multiple_choice", 
+        "options": ["Yes", "No"] 
+      },
+      { 
+        "id": "q40", 
+        "text": "Way of Farming (खेती का तरीका)", 
+        "type": "multiple_choice", 
+        "options": ["Cattle Plough (मवेशी हल)", "Tractors (ट्रैक्टर)"] 
+      },
+      { 
+        "id": "q41", 
+        "text": "Number of Cattle (कुल जानवरों कि संख्या)", 
+        "type": "text" 
+      },
+      { 
+        "id": "q42", 
+        "text": "Source of Irrigation (पटवन कि सुविधा)", 
+        "type": "checkboxes", 
+        "options": ["Well (कूंआ)", "Borewell (बोरिंग)", "River (नदी)", "Ponds (तालाब)", "Canal (नहर)", "Rain (वर्षा)"] 
+      },
+      { 
+        "id": "q43", 
+        "text": "What crops you grow? (List the crops) (आप क्या क्या उगाते हैं)", 
+        "type": "checkboxes", 
+        "options": ["Paddy (धान)", "Wheat (गेंहू)", "Pulses (दलहन)", "Oil Seed (तेल सामग्री)", "Millet (बाजरा)", "Corn/ maize (मक्का)", "Vegetables (सब्जी)", "Cotton (कपास)"] 
+      },
+      { 
+        "id": "q44", 
+        "text": "Name of fruits tree (आपके यंहा कोन कोन से फलदार पोधे हैं)", 
+        "type": "checkboxes", 
+        "options": ["Mango (आम)", "Guava (अमरुद)", "Lemon (निम्बू)", "Santra/ Moshami (संतरा)", "Chikoo (चीकू)", "Banana (केला)", "Papaya (पपीता)", "Jack Fruits (कटहल)", "Custard Apple (शरीफा)", "Apple (सेब)", "Pear (नाशपाती)", "Peach (आडू)", "Nuts (नट्स)", "Plum (आलूबुखारा)"] 
+      },
+      {
+        "id": "q45",
+        "text": "Total Number of Fruits Tree (कुल पोधो कि संख्या)",
+        "type": "text"
+      },
+      {
+        "id": "q46",
+        "text": "Agriculture (owned + contracted) (खेती के प्रकार)",
+        "type": "multiple_choice",
+        "options": ["Owned (अपना)", "Contracted (किसी और का लेकर)", "Other"]
+      },
+      {
+        "id": "q47",
+        "text": "Average Annual Income from Agriculture (खेती से वार्षिक आमदनी)",
+        "type": "multiple_choice",
+        "options": ["<=25000", "25,000 To 50,000", "50,000 To 1,00,000", "1,00,000 To 1,50,000", "1,50,000 To 2,00,000", "Above 2,00,000"]
+      },
+      {
+        "id": "q48",
+        "text": "Annual Income from self employment (खुद का काम करके वार्षिक आमदनी)",
+        "type": "multiple_choice",
+        "options": ["<= 25,000", "25,000 To 50,000", "50,000 To 1,00,000", "1,00,000 To 1,50,000", "1,50,000 To 2,00,000", "Above 2,00,000", "0"]
+      },
+      {
+        "id": "q49",
+        "text": "Do you work at any other place? (किसी अन्य जगह काम करते है)",
+        "type": "multiple_choice",
+        "options": ["Yes", "No"]
+      },
+      {
+        "id": "q50",
+        "text": "Average Annual salary (अन्य जगह काम करके वार्षिक आमदनी)",
+        "type": "multiple_choice",
+        "options": ["<= 25,000", "25,000 To 50,000", "50,000 To 1,00,000", "1,00,000 To 1,50,000", "1,50,000 To 2,00,000", "Above 2,00,000", "No"]
+      },
+      {
+        "id": "q51",
+        "text": "How many work days available in a year? (सालभर में कितने दिनों का काम मिलता है)",
+        "type": "text"
+      },
+      {
+        "id": "q52",
+        "text": "GOV. Employee (घर से कोई सरकारी नोकरी में है)",
+        "type": "dropdown",
+        "options": ["Yes", "No", "Other"]
+      },
+      {
+        "id": "q53",
+        "text": "Annual Income (सरकारी नोकरी से वार्षिक आमदनी)",
+        "type": "multiple_choice",
+        "options": ["<= 25,000", "25,000 To 50,000", "50,000 To 1,00,000", "1,00,000 To 1,50,000", "1,50,000 To 2,00,000", "Above 2,00,000", "No"]
+      },
+      {
+        "id": "q54",
+        "text": "Gross Annual Income of the family (सब मिलकर कुल परिवार का वार्षिक आमदनी क्या है)",
+        "type": "multiple_choice",
+        "options": ["<= 25,000", "25,000 To 50,000", "50,000 To 1,00,000", "1,00,000 To 1,50,000", "1,50,000 To 2,00,000", "2,00,000 To 3,00,000", "3,00,000 To 4,00,000", "Above 4,00,000", "0"]
+      },
+      {
+        "id": "q55",
+        "text": "Financial Management - Select all that apply",
+        "type": "checkboxes",
+        "options": ["Do you have bank account? (क्या बैंक में खाता है) - Yes", "Do you have bank account? (क्या बैंक में खाता है) - No", "Are you a member of Self Help Group? (किसी सहायता समूह से जुड़े हैं) - Yes", "Are you a member of Self Help Group? (किसी सहायता समूह से जुड़े हैं) - No", "Have you taken any loan? (किसी प्रकार का कर्ज लिए हैं) - Yes", "Have you taken any loan? (किसी प्रकार का कर्ज लिए हैं) - No"]
+      },
+      {
+        "id": "q56",
+        "text": "What SHG services you avail of (आप किसी सहायता समूह का लाभ उठाते है)",
+        "type": "text"
+      },
+      {
+        "id": "q57",
+        "text": "Amount of Loan (कितना कर्ज लिए हैं)",
+        "type": "text"
+      },
+      {
+        "id": "q58",
+        "text": "Which Type of Loan (कंहा से लिए हैं)",
+        "type": "multiple_choice",
+        "options": ["Bank", "Post office", "Other source", "No"]
+      },
+      {
+        "id": "q59",
+        "text": "Rate of Interest on the loan (ब्याज कि दर)",
+        "type": "text"
+      },
+      {
+        "id": "q60",
+        "text": "Access to Govt. Services - Select all that apply",
+        "type": "checkboxes",
+        "options": [
+          "Awareness of Govt services (सरकारी सेवा की जानकारी) - Yes",
+          "Awareness of Govt services (सरकारी सेवा की जानकारी) - No",
+          "Construction of Houses and Toilets (सरकारी घर या शोचालय का लाभ) - Yes",
+          "Construction of Houses and Toilets (सरकारी घर या शोचालय का लाभ) - No",
+          "Health services (स्वास्थ्य सेवाओं का लाभ) - Yes",
+          "Health services (स्वास्थ्य सेवाओं का लाभ) - No",
+          "Pension program (किसी प्रकार के पेंशन का लाभ) - Yes",
+          "Pension program (किसी प्रकार के पेंशन का लाभ) - No",
+          "Govt sponsored skills training programs (सरकार के माध्यम से चलाये जा रहे किसी स्किल प्रोग्राम का लाभ) - Yes",
+          "Govt sponsored skills training programs (सरकार के माध्यम से चलाये जा रहे किसी स्किल प्रोग्राम का लाभ) - No",
+          "Panchayat works (पंचायत के कम से खुश है) - Yes",
+          "Panchayat works (पंचायत के कम से खुश है) - No",
+          "P.D.S. (जन वितरण प्रणाली है) - Yes",
+          "P.D.S. (जन वितरण प्रणाली है) - No",
+          "P.M Awas Yojna (PM आवास मिला है) - Yes",
+          "P.M Awas Yojna (PM आवास मिला है) - No",
+          "MNREGA (मनरेगा में काम मिलता है) - Yes",
+          "MNREGA (मनरेगा में काम मिलता है) - No"
+        ]
+      }
     ]
   }
 ]

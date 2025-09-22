@@ -1,0 +1,145 @@
+[
+  {
+    "id": "student-registration",
+    "title": "Student Registration",
+    "description": "Register new students for Adarsh Sanch programs",
+    "questions": [
+      {
+        "id": "r1",
+        "text": "Student's Full Name (छात्र का पूरा नाम)",
+        "type": "text"
+      },
+      {
+        "id": "r2",
+        "text": "Father's Name (पिता का नाम)",
+        "type": "text"
+      },
+      {
+        "id": "r3",
+        "text": "Mother's Name (माता का नाम)",
+        "type": "text"
+      },
+      {
+        "id": "r4",
+        "text": "Date of Birth (जन्म तिथि)",
+        "type": "text"
+      },
+      {
+        "id": "r5",
+        "text": "Gender (लिंग)",
+        "type": "multiple_choice",
+        "options": ["Male (पुरुष)", "Female (महिला)", "Other (अन्य)"]
+      },
+      {
+        "id": "r6",
+        "text": "Village/Location (गांव/स्थान)",
+        "type": "dropdown",
+        "options": ["Adarsh Sanch, Karoli", "Adarsh Sanch, Doongi", "Adarsh Sanch, Sahson", "Adarsh Sanch, Bikapur", "Other"]
+      },
+      {
+        "id": "r7",
+        "text": "Complete Address (पूरा पता)",
+        "type": "textarea"
+      },
+      {
+        "id": "r8",
+        "text": "Mobile Number (मोबाइल नंबर)",
+        "type": "text"
+      },
+      {
+        "id": "r9",
+        "text": "Email ID (ईमेल आईडी)",
+        "type": "text"
+      },
+      {
+        "id": "r10",
+        "text": "Current Education Level (वर्तमान शिक्षा स्तर)",
+        "type": "dropdown",
+        "options": ["Below 8th (8वीं से कम)", "8th Class (8वीं कक्षा)", "10th Class (10वीं कक्षा)", "12th Class (12वीं कक्षा)", "Graduate (स्नातक)", "Post Graduate (स्नातकोत्तर)", "Other (अन्य)"]
+      },
+      {
+        "id": "r11",
+        "text": "School/College Name (स्कूल/कॉलेज का नाम)",
+        "type": "text"
+      },
+      {
+        "id": "r12",
+        "text": "Program of Interest (रुचि का प्रोग्राम)",
+        "type": "checkboxes",
+        "options": [
+          "Skill Development (स्किल डेवलपमेंट)",
+          "Computer Training (कंप्यूटर ट्रेनिंग)",
+          "Vocational Training (व्यावसायिक प्रशिक्षण)",
+          "Agriculture Training (कृषि प्रशिक्षण)",
+          "Self Help Group (स्वयं सहायता समूह)",
+          "Financial Literacy (वित्तीय साक्षरता)",
+          "Health & Wellness (स्वास्थ्य और कल्याण)",
+          "Women Empowerment (महिला सशक्तिकरण)"
+        ]
+      },
+      {
+        "id": "r13",
+        "text": "Family Annual Income (पारिवारिक वार्षिक आय)",
+        "type": "dropdown",
+        "options": ["Below 25,000", "25,000 - 50,000", "50,000 - 1,00,000", "1,00,000 - 2,00,000", "2,00,000 - 3,00,000", "Above 3,00,000"]
+      },
+      {
+        "id": "r14",
+        "text": "Caste Category (जाति श्रेणी)",
+        "type": "dropdown",
+        "options": ["General", "OBC", "SC", "ST", "Other"]
+      },
+      {
+        "id": "r15",
+        "text": "Do you have any disabilities? (क्या आपको कोई विकलांगता है?)",
+        "type": "multiple_choice",
+        "options": ["Yes (हां)", "No (नहीं)"]
+      },
+      {
+        "id": "r16",
+        "text": "If yes, please specify (यदि हां, तो कृपया बताएं)",
+        "type": "text"
+      },
+      {
+        "id": "r17",
+        "text": "Previous Training/Courses Completed (पहले पूरे किए गए प्रशिक्षण/कोर्स)",
+        "type": "textarea"
+      },
+      {
+        "id": "r18",
+        "text": "Current Employment Status (वर्तमान रोजगार स्थिति)",
+        "type": "multiple_choice",
+        "options": ["Student (छात्र)", "Unemployed (बेरोजगार)", "Self-Employed (स्व-रोजगार)", "Private Job (निजी नौकरी)", "Government Job (सरकारी नौकरी)", "Agriculture (कृषि)", "Other (अन्य)"]
+      },
+      {
+        "id": "r19",
+        "text": "Guardian's Name (अभिभावक का नाम)",
+        "type": "text"
+      },
+      {
+        "id": "r20",
+        "text": "Guardian's Contact Number (अभिभावक का संपर्क नंबर)",
+        "type": "text"
+      },
+      {
+        "id": "r21",
+        "text": "How did you hear about us? (आपने हमारे बारे में कैसे जाना?)",
+        "type": "checkboxes",
+        "options": [
+          "Friends/Family (मित्र/परिवार)",
+          "Social Media (सोशल मीडिया)",
+          "Local Advertisement (स्थानीय विज्ञापन)",
+          "Government Office (सरकारी कार्यालय)",
+          "School/College (स्कूल/कॉलेज)",
+          "Community Meeting (सामुदायिक बैठक)",
+          "Other (अन्य)"
+        ]
+      },
+      {
+        "id": "r22",
+        "text": "Additional Comments/Requirements (अतिरिक्त टिप्पणी/आवश्यकताएं)",
+        "type": "textarea"
+      }
+    ]
+  }
+]

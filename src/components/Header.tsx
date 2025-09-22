@@ -20,23 +20,59 @@ const useStyles = makeStyles({
     display: 'flex',
     alignItems: 'center',
     justifyContent: 'space-between',
-    ...shorthands.padding('0.5rem', '2rem'),
+    ...shorthands.padding('0.5rem', 'clamp(0.5rem, 4vw, 2rem)'),
     ...shorthands.borderBottom('1px', 'solid', 'var(--colorNeutralStroke1)'),
     height: '48px',
     backgroundColor: 'var(--colorNeutralBackground2)',
+    minHeight: '48px',
   },
   left: {
     display: 'flex',
     alignItems: 'center',
-    ...shorthands.gap('1rem'),
+    ...shorthands.gap('clamp(0.5rem, 2vw, 1rem)'),
+    flex: '1',
+    minWidth: '0', // Allow flex items to shrink
   },
   logo: {
-    height: '32px',
+    height: 'clamp(24px, 6vw, 32px)',
+    maxWidth: '100%',
+  },
+  title: {
+    fontSize: 'clamp(0.9rem, 3vw, 1.2rem)',
+    margin: '0',
+    whiteSpace: 'nowrap',
+    overflow: 'hidden',
+    textOverflow: 'ellipsis',
+    display: 'none', // Hidden on mobile by default
+    '@media (min-width: 768px)': {
+      display: 'block',
+    },
+    '@media (min-width: 480px)': {
+      display: 'block',
+      fontSize: '1rem',
+    },
   },
   right: {
     display: 'flex',
     alignItems: 'center',
-    ...shorthands.gap('1rem'),
+    ...shorthands.gap('clamp(0.25rem, 2vw, 1rem)'),
+    flexShrink: '0',
+  },
+  navButton: {
+    minWidth: '44px',
+    minHeight: '44px',
+    padding: '0.5rem',
+  },
+  themeButton: {
+    minWidth: '44px',
+    minHeight: '44px',
+    padding: '0.5rem',
+    '@media (max-width: 480px)': {
+      display: 'none', // Hide theme button on very small screens
+    },
+  },
+  avatar: {
+    cursor: 'pointer',
   },
 });
 
@@ -58,19 +94,26 @@ export const Header: React.FC<HeaderProps> = ({ isNavCollapsed, toggleNav }) => 
           icon={isNavCollapsed ? <PanelLeftExpand24Regular /> : <PanelLeftContract24Regular />}
           onClick={toggleNav}
           aria-label="Toggle Navigation"
+          className={styles.navButton}
         />
         <img src={logo} alt="Ekal Foundation Logo" className={styles.logo} />
-        <h3>Ekal Foundation Survey</h3>
+        <h3 className={styles.title}>Ekal Foundation Survey</h3>
       </div>
       <div className={styles.right}>
         <Button
+          appearance="transparent"
           icon={isDark ? <WeatherSunny24Regular /> : <WeatherMoon24Regular />}
           onClick={toggleTheme}
           aria-label={isDark ? 'Switch to light mode' : 'Switch to dark mode'}
+          className={styles.themeButton}
         />
         <Menu>
           <MenuTrigger>
-            <Avatar name="Demo User" size={32} />
+            <Avatar 
+              name="Demo User" 
+              size={window.innerWidth < 480 ? 28 : 32} 
+              className={styles.avatar}
+            />
           </MenuTrigger>
           <MenuPopover>
             <MenuList>
