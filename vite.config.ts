@@ -30,17 +30,17 @@ export default defineConfig({
         start_url: '/',
         icons: [
           {
-            src: '/logo.svg', // Point to the new SVG
+            src: '/ekalpwaapp/logo.svg', // Point to the new SVG
             sizes: '192x192',
             type: 'image/svg+xml',
           },
           {
-            src: '/logo.svg', // Point to the new SVG
+            src: '/ekalpwaapp/logo.svg', // Point to the new SVG
             sizes: '512x512',
             type: 'image/svg+xml',
           },
           {
-            src: '/logo.svg', // Point to the new SVG
+            src: '/ekalpwaapp/logo.svg', // Point to the new SVG
             sizes: 'any',
             purpose: 'any maskable',
             type: 'image/svg+xml',
